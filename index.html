@@ -20,7 +20,6 @@
             background-repeat: no-repeat;
             background-color: rgba(255,255,255,0.75);
             background-blend-mode: lighten;
-
             color: #000;
             max-width: 1600px;
             margin: 0 auto;
@@ -68,7 +67,6 @@
         .tip-btn:hover {
             background: #e8f0ff;
         }
-
         /* ============================================== */
         /* 【弹窗统一修改区】所有弹窗遮罩、盒子尺寸统一放这里 */
         /* ============================================== */
@@ -110,7 +108,6 @@
             font-size: 18px;
             cursor: pointer;
         }
-
         /* ============================================== */
         /* 【天气预报弹窗专属样式区】卡片、图标悬浮提示 */
         /* ============================================== */
@@ -185,7 +182,6 @@
             font-size: 22px;
             color: #555;
         }
-
         /* ========== 中部实况气象数据 ========== */
         .station-title {
             font-size: 36px;
@@ -229,13 +225,27 @@
             display: inline-block;
             width: 140px;
         }
-
+        /* 分割线容器：相对定位，承载右下角发布文本 */
+        .divider-wrap {
+            position: relative;
+            margin: 20px 0;
+        }
         /* 分割线 */
         .divider {
             border-bottom: 2px solid #ffffff;
-            margin: 20px 0;
         }
-
+        /* 分割线上方右下角发布时间文本框：文字蓝色、加粗 */
+        .publishing-time {
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #0044cc;
+            padding: 6px 14px;
+            background: rgba(255,255,255,0.75);
+            border-radius: 6px;
+        }
         /* ========== 底部其它网站导航区 ========== */
         .func-title {
             font-size: 22px;
@@ -284,7 +294,6 @@
             <div class="tip-btn" id="openTip">天气提示</div>
         </div>
     </div>
-
     <!-- ====================================================== -->
     <!-- 【弹窗文本编辑集中区】所有弹窗内部文字全部放这里，方便修改 -->
     <!-- ====================================================== -->
@@ -298,7 +307,6 @@
             <button class="modal-close" id="closeTip">关闭提示</button>
         </div>
     </div>
-
     <!-- 弹窗2：天气预报弹窗（所有预报文字统一在此修改） -->
     <div class="modal-mask" id="forecastMask">
         <div class="modal-box">
@@ -375,7 +383,6 @@
             <button class="modal-close" id="closeForecast">关闭预报</button>
         </div>
     </div>
-
     <!-- 中部实况标题与气象数据 -->
     <div class="station-title">宝安中学实况</div>
     <div class="weather-container">
@@ -390,8 +397,11 @@
         </div>
     </div>
 
-    <!-- 分割线 -->
-    <div class="divider"></div>
+    <!-- 分割线外层容器+右下角发布时间文本框 -->
+    <div class="divider-wrap">
+        <div class="publishing-time">发布时间 06-21 12:00</div>
+        <div class="divider"></div>
+    </div>
 
     <!-- 底部网站导航 -->
     <div class="func-title">其它网站</div>
@@ -412,7 +422,6 @@
             <a href="https://weibo.com/u/8013139496">气象社微博</a>
         </div>
     </div>
-
 <script>
     // ========== 弹窗交互JS（弹窗开关逻辑集中在此修改） ==========
     // 天气提示弹窗
@@ -422,7 +431,6 @@
     openTip.onclick = () => tipMask.style.display = 'flex';
     closeTip.onclick = () => tipMask.style.display = 'none';
     tipMask.onclick = (e) => { if(e.target === tipMask) tipMask.style.display = 'none' };
-
     // 天气预报弹窗
     const openForecast = document.getElementById('openForecast');
     const forecastMask = document.getElementById('forecastMask');
