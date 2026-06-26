@@ -17,8 +17,8 @@
             background-position: center;
             background-attachment: fixed;
             background-repeat: no-repeat;
-            /* 还原原始背景底色：纯白半透明，去掉黄色底色 */
-            background-color: rgba(255,255,0.75);
+            /* 去掉黄色底色，纯白半透明 */
+            background-color: rgba(255,255,255,0.75);
             background-blend-mode: lighten;
             color: #000;
             max-width: 1600px;
@@ -54,7 +54,7 @@
             font-weight: bold;
             color: #0044cc;
         }
-        /* 顶部弹窗按钮 原始透明白底无修改 */
+        /* 顶部弹窗按钮 透明白底，无黄色 */
         .tip-btn {
             padding: 10px 26px;
             border: 2px solid #000;
@@ -77,7 +77,7 @@
             z-index: 99;
             align-items: center;
             justify-content: center;
-            padding: 8px;
+            padding: 8;
             overflow-y: auto;
         }
         /* 电脑端天气提示弹窗 */
@@ -212,7 +212,7 @@
             background: rgba(255,255,255,0.75);
             border-radius: 6px;
         }
-        /* 底部导航桌面样式 */
+        /* 底部导航：保留淡黄色边框，无黄色底色 */
         .func-title {
             font-size: 22px;
             font-weight: bold;
@@ -229,18 +229,18 @@
             text-align: center;
             font-weight: bold;
             padding: 16px 8px;
-            border: 0.5px solid #f7e086;
+            border: 0.5px solid #f7e086; /* 淡黄色边框保留 */
             border-radius: 9999px;
             text-decoration: none;
             color: #000;
             transition: 0.2s;
-            background-color: rgba(255,255,255,0.8);
+            background-color: rgba(255,255,255,0.8); /* 纯白透明背景 */
         }
         .func-item:first-child a { font-size: 18px; }
         .func-item:not(:first-child) a { font-size: 20px; }
         .func-item a:hover { background: #f0f4f9; }
 
-        /* ==========手机端适配（保留你要求的缩小逻辑，仅背景复原）========== */
+        /* 手机端适配：全部缩小逻辑不变 */
         @media (max-width: 768px) {
             body{padding:6px}
             .header{flex-direction:column;gap:10px;padding-bottom:10px}
@@ -249,7 +249,7 @@
             .tip-btn{padding:5px 12px;font-size:13px}
             .modal-mask{padding:4px}
 
-            /* 手机天气提示弹窗自适应贴合内容 */
+            /* 手机天气提示弹窗自适应，无多余空白高度 */
             #tipMask .modal-box{
                 width:94vw;
                 min-height:auto;
@@ -278,12 +278,12 @@
             .data-list span{display:block;margin:0 auto;width:auto}
             .publishing-time{font-size:12px;padding:3px 6px;bottom:-3px}
 
-            /* 手机其它网站缩小 */
+            /* 手机底部导航缩小，淡黄色边框不变 */
             .func-title{font-size:15px;text-align:center;margin-bottom:10px}
             .func-links{grid-template-columns:1fr 1fr;gap:6px}
             .func-item a{padding:6px 4px;font-size:12px;border-width:0.3px}
 
-            /* 超小屏切换两列 */
+            /* 超小屏幕单列 */
             @media (max-width:420px) {
                 .forecast-week-wrap{grid-template-columns:repeat(2,1fr)}
                 .func-links{grid-template-columns:1fr}
@@ -404,7 +404,7 @@
         <div class="publishing-time">发布时间 06-26 15:15</div>
         <div class="divider"></div>
     </div>
-    <!-- 底部网站导航 -->
+    <!-- 底部网站导航（淡黄色边框保留，无黄色底色） -->
     <div class="func-title">其它网站</div>
     <div class="func-links">
         <div class="func-item"><a href="#">台风风险指数（开发中）</a></div>
