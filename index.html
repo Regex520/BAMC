@@ -76,7 +76,7 @@
             z-index: 99;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 8px;
             overflow-y: auto;
         }
         #tipMask .modal-box {
@@ -89,10 +89,9 @@
             line-height: 1.8;
         }
         #forecastMask .modal-box {
-            width: 85vw;
-            min-height: 40vh;
+            width: 98vw;
             background: #fff;
-            border-radius: 12px;
+            border-radius: 8px;
             overflow: hidden;
         }
         .modal-close {
@@ -239,41 +238,42 @@
         .func-item:not(:first-child) a { font-size: 20px; }
         .func-item a:hover { background: #f0f4f9; }
 
-        /* 全新精简手机适配：预报双列布局，大幅压缩高度 */
+        /* 极致压缩手机端：3列预报，最小尺寸 */
         @media (max-width: 768px) {
-            body{padding:8px}
-            .header{flex-direction:column;gap:12px;padding-bottom:12px}
+            body{padding:6px}
+            .header{flex-direction:column;gap:10px;padding-bottom:10px}
             .header-left{justify-content:center}
-            .title-text{font-size:15px}
-            .tip-btn{padding:6px 14px;font-size:14px}
-            /* 弹窗基础适配 */
-            #tipMask .modal-box{width:92vw;padding:20px;font-size:18px;line-height:1.6}
-            #forecastMask .modal-box{width:96vw}
-            .forecast-top-bar{font-size:20px;padding:10px 16px}
-            /* 核心改动：手机双列7天预报 */
-            .forecast-week-wrap{grid-template-columns:1fr 1fr;gap:8px;padding:10px}
-            .forecast-day-card{padding:10px 4px}
-            .forecast-date{font-size:16px;margin-bottom:6px}
-            .forecast-icon{font-size:36px;margin:6px 0}
-            .forecast-high,.forecast-low{font-size:22px;margin:4px 0}
-            .forecast-release{font-size:14px;padding:0 12px 10px}
-            .modal-close{margin-top:15px;padding:6px;width:100%;font-size:14px}
-            /* 实况数据压缩 */
-            .station-title{font-size:24px;margin-bottom:20px;text-align:center}
-            .weather-container{flex-direction:column;gap:20px;padding:16px;margin-bottom:30px;max-width:100%}
-            .temp-num{font-size:56px}
-            .wind-info{font-size:20px}
-            .data-list{font-size:18px;text-align:center;line-height:1.6}
+            .title-text{font-size:14px}
+            .tip-btn{padding:5px 12px;font-size:13px}
+            /* 弹窗全局压缩 */
+            .modal-mask{padding:4px}
+            #tipMask .modal-box{width:94vw;padding:14px;font-size:16px;line-height:1.4}
+            #forecastMask .modal-box{width:99vw}
+            .forecast-top-bar{font-size:17px;padding:8px 12px}
+            /* 预报核心：3列布局，极致缩小卡片 */
+            .forecast-week-wrap{grid-template-columns:repeat(3,1fr);gap:6px;padding:8px}
+            .forecast-day-card{padding:6px 2px;border-radius:4px}
+            .forecast-date{font-size:13px;margin-bottom:3px}
+            .forecast-icon{font-size:28px;margin:3px 0}
+            .forecast-high,.forecast-low{font-size:18px;margin:2px 0;line-height:1}
+            .forecast-release{font-size:12px;padding:0 8px 6px}
+            .modal-close{margin-top:8px;padding:4px;width:100%;font-size:13px}
+            /* 实况压缩 */
+            .station-title{font-size:20px;margin-bottom:15px;text-align:center}
+            .weather-container{flex-direction:column;gap:12px;padding:12px;margin-bottom:20px;max-width:100%}
+            .temp-num{font-size:46px}
+            .wind-info{font-size:16px}
+            .data-list{font-size:16px;text-align:center;line-height:1.4}
             .data-list span{display:block;margin:0 auto;width:auto}
             /* 发布时间 */
-            .publishing-time{font-size:14px;padding:4px 8px;bottom:-4px}
-            /* 底部导航双列 */
-            .func-title{font-size:18px;text-align:center;margin-bottom:15px}
-            .func-links{grid-template-columns:1fr 1fr;gap:10px}
-            .func-item a{padding:10px;font-size:14px}
-            /* 超小屏切换单列 */
+            .publishing-time{font-size:12px;padding:3px 6px;bottom:-3px}
+            /* 底部导航 */
+            .func-title{font-size:16px;text-align:center;margin-bottom:12px}
+            .func-links{grid-template-columns:1fr 1fr;gap:8px}
+            .func-item a{padding:8px;font-size:13px}
+            /* 超窄屏切换2列 */
             @media (max-width:420px){
-                .forecast-week-wrap{grid-template-columns:1fr}
+                .forecast-week-wrap{grid-template-columns:repeat(2,1fr)}
                 .func-links{grid-template-columns:1fr}
             }
         }
